@@ -1,5 +1,7 @@
 # Akka Quickstart with Java
 
+Adapted from  https://github.com/akka/akka-quickstart-java.g8
+
 ## Quickstart guide
 
 This example is described in the [Lightbend Tutorial for Microservices](https://developer.lightbend.com/docs/akka-guide/microservices-tutorial/index.html)
