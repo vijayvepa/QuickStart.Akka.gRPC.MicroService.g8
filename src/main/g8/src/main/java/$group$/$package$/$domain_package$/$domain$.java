@@ -76,7 +76,7 @@ public class $domain$ extends EventSourcedBehaviorWithEnforcedReplies<$domain$Co
   }
 
   @Override
-  public Set<String> tagsFor($domain$Event shoppingCartEvent) {
+  public Set<String> tagsFor($domain$Event shopping$domain$Event) {
     return Collections.singleton(projectionTag);
   }
 
@@ -129,7 +129,7 @@ public class $domain$ extends EventSourcedBehaviorWithEnforcedReplies<$domain$Co
     }
 
     return Effect().persist(new ItemAdded(cartId, command.itemId(), command.quantity()))
-        .thenReply(command.replyTo(), updatedCart -> success(updatedCart.toSummary()));
+        .thenReply(command.replyTo(), updated$domain$ -> success(updated$domain$.toSummary()));
   }
 
   private ReplyEffect<$domain$Event, $domain$State> onCheckout(
@@ -142,7 +142,7 @@ public class $domain$ extends EventSourcedBehaviorWithEnforcedReplies<$domain$Co
     }
 
     return Effect().persist(new CheckedOut(cartId, Instant.now()))
-        .thenReply(command.replyTo(), updatedCart -> success(updatedCart.toSummary()));
+        .thenReply(command.replyTo(), updated$domain$ -> success(updated$domain$.toSummary()));
   }
 
   private ReplyEffect<$domain$Event, $domain$State> replyError(

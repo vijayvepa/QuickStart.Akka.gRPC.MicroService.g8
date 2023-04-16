@@ -20,9 +20,9 @@ import $group$.$package$.$projection_package$.model.$projection$;
 import $group$.$package$.$domain_package$.model.Summary;
 import $group$.$package$.$domain_package$.proto.AddItemRequest;
 import $group$.$package$.$domain_package$.proto.AdjustItemQuantityRequest;
-import $group$.$package$.$domain_package$.proto.Cart;
+import $group$.$package$.$domain_package$.proto.$domain$;
 import $group$.$package$.$domain_package$.proto.CheckoutRequest;
-import $group$.$package$.$domain_package$.proto.GetCartRequest;
+import $group$.$package$.$domain_package$.proto.Get$domain$Request;
 import $group$.$package$.$domain_package$.proto.Get$projection$Request;
 import $group$.$package$.$domain_package$.proto.Get$projection$Response;
 import $group$.$package$.$domain_package$.proto.RemoveItemRequest;
@@ -63,25 +63,25 @@ public class $domain$ServiceImpl implements $domain$Service {
   }
 
   @Override
-  public CompletionStage<Cart> addItem(AddItemRequest in) {
+  public CompletionStage<$domain$> addItem(AddItemRequest in) {
 
-    logger.info("addItem {} to cart {}", in.getItemId(), in.getCartId());
-    final EntityRef<$domain$Command> entityRef = getEntityRef(in.getCartId());
+    logger.info("addItem {} to cart {}", in.getItemId(), in.get$domain$Id());
+    final EntityRef<$domain$Command> entityRef = getEntityRef(in.get$domain$Id());
     final CompletionStage<Summary> reply = entityRef.askWithStatus(replyTo -> new AddItem(in.getItemId(), in.getQuantity(), replyTo), timeout);
 
-    final CompletionStage<Cart> cart = reply.thenApply(ProtoUtils::toProtoSummary);
+    final CompletionStage<$domain$> cart = reply.thenApply(ProtoUtils::toProtoSummary);
 
     return convertError(cart);
   }
 
   @Override
-  public CompletionStage<Cart> removeItem(RemoveItemRequest in) {
-    logger.info("Performing RemoveItem  to cart {}", in.getCartId());
-    final EntityRef<$domain$Command> entityRef = getEntityRef(in.getCartId());
+  public CompletionStage<$domain$> removeItem(RemoveItemRequest in) {
+    logger.info("Performing RemoveItem  to cart {}", in.get$domain$Id());
+    final EntityRef<$domain$Command> entityRef = getEntityRef(in.get$domain$Id());
 
     final CompletionStage<Summary> reply = entityRef.askWithStatus(replyTo -> new RemoveItem(in.getItemId(), replyTo), timeout);
 
-    final CompletionStage<Cart> response = reply.thenApply(ProtoUtils::toProtoSummary);
+    final CompletionStage<$domain$> response = reply.thenApply(ProtoUtils::toProtoSummary);
 
     return convertError(response);
   }
@@ -91,40 +91,40 @@ public class $domain$ServiceImpl implements $domain$Service {
   }
 
   @Override
-  public CompletionStage<Cart> checkout(CheckoutRequest in) {
-    logger.info("checkout {} ", in.getCartId());
+  public CompletionStage<$domain$> checkout(CheckoutRequest in) {
+    logger.info("checkout {} ", in.get$domain$Id());
 
-    final EntityRef<$domain$Command> entityRef = getEntityRef(in.getCartId());
+    final EntityRef<$domain$Command> entityRef = getEntityRef(in.get$domain$Id());
     final CompletionStage<Summary> summary = entityRef.askWithStatus(Checkout::new, timeout);
-    final CompletionStage<Cart> cart = summary.thenApply(ProtoUtils::toProtoSummary);
+    final CompletionStage<$domain$> cart = summary.thenApply(ProtoUtils::toProtoSummary);
     return convertError(cart);
 
   }
 
   @Override
-  public CompletionStage<Cart> getCart(GetCartRequest in) {
-    logger.info("getCart {}", in.getCartId());
-    final EntityRef<$domain$Command> entityRef = getEntityRef(in.getCartId());
+  public CompletionStage<$domain$> get$domain$(Get$domain$Request in) {
+    logger.info("get$domain$ {}", in.get$domain$Id());
+    final EntityRef<$domain$Command> entityRef = getEntityRef(in.get$domain$Id());
     final CompletionStage<Summary> get = entityRef.ask(Get::new, timeout);
 
-    final CompletionStage<Cart> protoCart = GrpcUtils.handleNotFound(
+    final CompletionStage<$domain$> proto$domain$ = GrpcUtils.handleNotFound(
         get,
         summary -> summary.items().isEmpty(),
         ProtoUtils::toProtoSummary,
-        String.format("Cart %s is empty", in.getCartId()));
+        String.format("$domain$ %s is empty", in.get$domain$Id()));
 
-    return convertError(protoCart);
+    return convertError(proto$domain$);
 
   }
 
   @Override
-  public CompletionStage<Cart> adjustItemQuantity(AdjustItemQuantityRequest in) {
-    logger.info("Performing AdjustItemQuantity  to entity {}", in.getCartId());
-    final EntityRef<$domain$Command> entityRef = getEntityRef(in.getCartId());
+  public CompletionStage<$domain$> adjustItemQuantity(AdjustItemQuantityRequest in) {
+    logger.info("Performing AdjustItemQuantity  to entity {}", in.get$domain$Id());
+    final EntityRef<$domain$Command> entityRef = getEntityRef(in.get$domain$Id());
 
     final CompletionStage<Summary> reply = entityRef.askWithStatus(replyTo -> new AdjustItemQuantity(in.getItemId(), in.getQuantity(), replyTo), timeout);
 
-    final CompletionStage<Cart> response = reply.thenApply(ProtoUtils::toProtoSummary);
+    final CompletionStage<$domain$> response = reply.thenApply(ProtoUtils::toProtoSummary);
 
     return convertError(response);
   }

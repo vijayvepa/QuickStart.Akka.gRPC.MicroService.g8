@@ -49,8 +49,8 @@ public class Main {
     final String grpcInterface = config.getString("$name$.grpc.interface");
     final int grpcPort = config.getInt("$name$.grpc.port");
 
-    final $domain$ServiceImpl shoppingCartService = new $domain$ServiceImpl(system, itemPopularityRepository);
-    $domain$Server.start(grpcInterface, grpcPort, system, shoppingCartService);
+    final $domain$ServiceImpl shopping$domain$Service = new $domain$ServiceImpl(system, itemPopularityRepository);
+    $domain$Server.start(grpcInterface, grpcPort, system, shopping$domain$Service);
     $domain$.init(system);
 
 

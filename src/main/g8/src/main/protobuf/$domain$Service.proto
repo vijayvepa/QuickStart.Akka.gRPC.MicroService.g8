@@ -1,0 +1,61 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option  java_package = "$group$.$package$.proto";
+
+package $group$.$package$;
+
+service $domain$Service {
+  rpc AddItem(AddItemRequest) returns ($domain$) {}
+  rpc RemoveItem(RemoveItemRequest) returns ($domain$) {}
+  rpc Checkout (CheckoutRequest) returns ($domain$) {}
+  rpc Get$domain$(Get$domain$Request) returns ($domain$) {}
+  rpc AdjustItemQuantity(AdjustItemQuantityRequest) returns ($domain$) {}
+  rpc Get$projection$(Get$projection$Request) returns (Get$projection$Response) {}
+}
+
+message AddItemRequest{
+  string cartId = 1;
+  string itemId = 2;
+  int32 quantity = 3;
+
+}
+
+message AdjustItemQuantityRequest{
+  string cartId = 1;
+  string itemId = 2;
+  int32 quantity = 3;
+
+}
+
+message RemoveItemRequest{
+  string cartId = 1;
+  string itemId = 2;
+}
+
+message $domain${
+  repeated Item items = 1;
+  bool checkedOut = 2;
+}
+
+message Item{
+  string itemId = 1;
+  int32 quantity = 2;
+}
+
+message CheckoutRequest{
+  string cartId = 1;
+}
+
+message Get$domain$Request{
+  string cartId = 1;
+}
+
+message Get$projection$Request{
+  string itemId = 1;
+}
+
+message Get$projection$Response{
+  string itemId = 1;
+  int64 popularityCount = 2;
+}

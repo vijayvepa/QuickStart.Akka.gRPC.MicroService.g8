@@ -2,7 +2,7 @@ package $group$.$package$;
 
 import $group$.$package$.$domain_package$.event.ItemAdded;
 import $group$.$package$.$domain_package$.model.Summary;
-import $group$.$package$.$domain_package$.proto.Cart;
+import $group$.$package$.$domain_package$.proto.$domain$;
 import $group$.$package$.$domain_package$.proto.Get$projection$Response;
 import $group$.$package$.$domain_package$.proto.Item;
 import $group$.$package$.$projection_package$.model.$projection$;
@@ -13,14 +13,14 @@ import java.util.Optional;
 public class ProtoUtils {
   private ProtoUtils(){}
 
-  public static Cart toProtoSummary(Summary summary) {
+  public static $domain$ toProtoSummary(Summary summary) {
     final List<Item> protoItems = summary.items().entrySet().stream()
         .map(entry -> Item.newBuilder()
             .setItemId(entry.getKey())
             .setQuantity(entry.getValue())
             .build()).toList();
 
-    return Cart.newBuilder().addAllItems(protoItems).build();
+    return $domain$.newBuilder().addAllItems(protoItems).build();
   }
 
   public static Get$projection$Response toProto$projection$(Optional<$projection$> itemPopularity) {
@@ -30,9 +30,9 @@ public class ProtoUtils {
         .setItemId(id).setPopularityCount(count).build();
   }
 
-  public static shopping.cart.proto.ItemAdded toProtoItemAdded(ItemAdded someItemAdded) {
-    return shopping.cart.proto.ItemAdded.newBuilder()
-        .setCartId(someItemAdded.cartId())
+  public static $group$.$package$.proto.ItemAdded toProtoItemAdded(ItemAdded someItemAdded) {
+    return $group$.$package$.proto.ItemAdded.newBuilder()
+        .set$domain$Id(someItemAdded.cartId())
         .setItemId(someItemAdded.itemId())
         .setQuantity(someItemAdded.quantity())
         .build();

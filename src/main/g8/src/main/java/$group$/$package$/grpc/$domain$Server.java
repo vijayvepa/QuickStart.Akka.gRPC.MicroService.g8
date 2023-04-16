@@ -28,12 +28,12 @@ public class $domain$Server {
        String host,
        int port,
        ActorSystem<?> system,
-       $domain$Service shoppingCartService) {
+       $domain$Service shopping$domain$Service) {
 
     @SuppressWarnings("unchecked")
     Function<HttpRequest, CompletionStage<HttpResponse>> service =
         ServiceHandler.concatOrNotFound(
-            get$domain$ServiceHandler(system, shoppingCartService),
+            get$domain$ServiceHandler(system, shopping$domain$Service),
             getServerReflection(system));
 
     CompletionStage<ServerBinding> serverBinding =
