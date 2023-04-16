@@ -1,4 +1,4 @@
-package $package$.kafka;
+package $group$.$package$.kafka;
 
 import akka.Done;
 import akka.actor.CoordinatedShutdown;
@@ -26,10 +26,10 @@ import org.apache.kafka.common.serialization.StringSerializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.orm.jpa.JpaTransactionManager;
-import $package$.$domain_package$.$domain$;
-import $package$.$domain_package$.event.ItemAdded;
-import $package$.$domain_package$.$domain$Event;
-import $package$.ProtoUtils;
+import $group$.$package$.$domain_package$.$domain$;
+import $group$.$package$.$domain_package$.event.ItemAdded;
+import $group$.$package$.$domain_package$.$domain$Event;
+import $group$.$package$.ProtoUtils;
 
 import java.util.Optional;
 import java.util.concurrent.CompletionStage;

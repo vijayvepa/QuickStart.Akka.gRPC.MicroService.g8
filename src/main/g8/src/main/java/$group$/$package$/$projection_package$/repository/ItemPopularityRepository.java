@@ -1,7 +1,7 @@
-package $package$.$projection_package$.repository;
+package $group$.$package$.$projection_package$.repository;
 
 import org.springframework.data.repository.Repository;
-import $package$.$projection_package$.model.$projection$;
+import $group$.$package$.$projection_package$.model.$projection$;
 
 import java.util.Optional;
 

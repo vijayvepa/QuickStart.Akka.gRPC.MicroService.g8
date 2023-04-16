@@ -1,4 +1,4 @@
-package $package$;
+package $group$.$package$;
 
 import akka.actor.testkit.typed.javadsl.TestKitJunitResource;
 import akka.actor.testkit.typed.javadsl.TestProbe;

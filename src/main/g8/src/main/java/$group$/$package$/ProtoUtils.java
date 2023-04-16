@@ -1,11 +1,11 @@
-package $package$;
+package $group$.$package$;
 
-import $package$.$domain_package$.event.ItemAdded;
-import $package$.$domain_package$.model.Summary;
-import $package$.$domain_package$.proto.Cart;
-import $package$.$domain_package$.proto.Get$projection$Response;
-import $package$.$domain_package$.proto.Item;
-import $package$.$projection_package$.model.$projection$;
+import $group$.$package$.$domain_package$.event.ItemAdded;
+import $group$.$package$.$domain_package$.model.Summary;
+import $group$.$package$.$domain_package$.proto.Cart;
+import $group$.$package$.$domain_package$.proto.Get$projection$Response;
+import $group$.$package$.$domain_package$.proto.Item;
+import $group$.$package$.$projection_package$.model.$projection$;
 
 import java.util.List;
 import java.util.Optional;

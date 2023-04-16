@@ -1,4 +1,4 @@
-package $package$;
+package $group$.$package$;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -10,8 +10,8 @@ import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import $package$.$projection_package$.model.$projection$;
-import $package$.$projection_package$.repository.$projection$Repository;
+import $group$.$package$.$projection_package$.model.$projection$;
+import $group$.$package$.$projection_package$.repository.$projection$Repository;
 
 import javax.sql.DataSource;
 import java.util.Objects;

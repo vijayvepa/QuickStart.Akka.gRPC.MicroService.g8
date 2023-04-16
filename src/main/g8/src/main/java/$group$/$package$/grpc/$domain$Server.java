@@ -1,4 +1,4 @@
-package $package$.grpc;
+package $group$.$package$.grpc;
 
 import akka.actor.typed.ActorSystem;
 import akka.grpc.javadsl.ServerReflection;
@@ -15,8 +15,8 @@ import java.time.Duration;
 import java.util.Collections;
 import java.util.concurrent.CompletionStage;
 
-import $package$.$domain_package$.proto.$domain$Service;
-import $package$.$domain_package$.proto.$domain$ServiceHandlerFactory;
+import $group$.$package$.$domain_package$.proto.$domain$Service;
+import $group$.$package$.$domain_package$.proto.$domain$ServiceHandlerFactory;
 
 
 public class $domain$Server {

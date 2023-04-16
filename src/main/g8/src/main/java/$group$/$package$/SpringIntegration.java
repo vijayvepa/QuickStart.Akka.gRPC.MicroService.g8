@@ -1,4 +1,4 @@
-package $package$;
+package $group$.$package$;
 
 import akka.actor.typed.ActorSystem;
 import com.typesafe.config.Config;

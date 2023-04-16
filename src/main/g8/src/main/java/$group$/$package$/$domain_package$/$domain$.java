@@ -1,4 +1,4 @@
-package $package$.$domain_package$;
+package $group$.$package$.$domain_package$;
 
 import akka.actor.typed.ActorRef;
 import akka.actor.typed.ActorSystem;
@@ -18,16 +18,16 @@ import akka.persistence.typed.javadsl.EventHandler;
 import akka.persistence.typed.javadsl.EventSourcedBehavior;
 import akka.persistence.typed.javadsl.EventSourcedBehaviorWithEnforcedReplies;
 import akka.persistence.typed.javadsl.ReplyEffect;
-import $package$.$domain_package$.command.AddItem;
-import $package$.$domain_package$.command.AdjustItemQuantity;
-import $package$.$domain_package$.command.Checkout;
-import $package$.$domain_package$.command.Get;
-import $package$.$domain_package$.command.RemoveItem;
-import $package$.$domain_package$.event.CheckedOut;
-import $package$.$domain_package$.event.ItemAdded;
-import $package$.$domain_package$.event.ItemQuantityAdjusted;
-import $package$.$domain_package$.event.ItemRemoved;
-import $package$.$domain_package$.model.Summary;
+import $group$.$package$.$domain_package$.command.AddItem;
+import $group$.$package$.$domain_package$.command.AdjustItemQuantity;
+import $group$.$package$.$domain_package$.command.Checkout;
+import $group$.$package$.$domain_package$.command.Get;
+import $group$.$package$.$domain_package$.command.RemoveItem;
+import $group$.$package$.$domain_package$.event.CheckedOut;
+import $group$.$package$.$domain_package$.event.ItemAdded;
+import $group$.$package$.$domain_package$.event.ItemQuantityAdjusted;
+import $group$.$package$.$domain_package$.event.ItemRemoved;
+import $group$.$package$.$domain_package$.model.Summary;
 
 import java.time.Duration;
 import java.time.Instant;

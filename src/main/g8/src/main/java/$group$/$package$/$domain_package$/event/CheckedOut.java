@@ -1,6 +1,6 @@
-package $package$.$domain_package$.event;
+package $group$.$package$.$domain_package$.event;
 
-import $package$.$domain_package$.$domain$Event;
+import $group$.$package$.$domain_package$.$domain$Event;
 
 import java.time.Instant;
 

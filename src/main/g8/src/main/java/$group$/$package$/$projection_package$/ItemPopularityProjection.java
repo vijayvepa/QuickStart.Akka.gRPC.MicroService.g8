@@ -1,4 +1,4 @@
-package $package$.$projection_package$;
+package $group$.$package$.$projection_package$;
 
 import akka.actor.typed.ActorSystem;
 import akka.cluster.sharding.typed.ShardedDaemonProcessSettings;
@@ -17,11 +17,11 @@ import common.JpaSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.orm.jpa.JpaTransactionManager;
-import $package$.$domain_package$.$domain$;
-import $package$.$domain_package$.event.ItemAdded;
-import $package$.$domain_package$.$domain$Event;
-import $package$.$projection_package$.model.$projection$;
-import $package$.$projection_package$.repository.$projection$Repository;
+import $group$.$package$.$domain_package$.$domain$;
+import $group$.$package$.$domain_package$.event.ItemAdded;
+import $group$.$package$.$domain_package$.$domain$Event;
+import $group$.$package$.$projection_package$.model.$projection$;
+import $group$.$package$.$projection_package$.repository.$projection$Repository;
 
 import java.util.Optional;
 

@@ -1,4 +1,4 @@
-package $package$.$projection_package$.model;
+package $group$.$package$.$projection_package$.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

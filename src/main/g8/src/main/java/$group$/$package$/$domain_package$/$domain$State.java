@@ -1,7 +1,7 @@
-package $package$.$domain_package$;
+package $group$.$package$.$domain_package$;
 
 import common.CborSerializable;
-import $package$.$domain_package$.model.Summary;
+import $group$.$package$.$domain_package$.model.Summary;
 
 import java.time.Instant;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package $package$.$domain_package$.model;
+package $group$.$package$.$domain_package$.model;
 
 import common.CborSerializable;
 
