@@ -6,7 +6,7 @@ option java_package = "$group$.$package$.proto";
 package $group$.$package$;
 
 message ItemAdded {
-  string cartId = 1;
+  string the$domain$Id = 1;
   string itemId = 2;
   int32 quantity = 3;
 }

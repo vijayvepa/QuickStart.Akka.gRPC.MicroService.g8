@@ -32,7 +32,7 @@ public class ProtoUtils {
 
   public static $group$.$package$.proto.ItemAdded toProtoItemAdded(ItemAdded someItemAdded) {
     return $group$.$package$.proto.ItemAdded.newBuilder()
-        .set$domain$Id(someItemAdded.cartId())
+        .setThe$domain$Id(someItemAdded.the$domain$Id())
         .setItemId(someItemAdded.itemId())
         .setQuantity(someItemAdded.quantity())
         .build();

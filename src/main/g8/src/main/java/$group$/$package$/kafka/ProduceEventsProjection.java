@@ -94,9 +94,9 @@ public final class ProduceEventsProjection {
     public CompletionStage<Done> process(EventEnvelope<$domain$Event> envelope) {
       $domain$Event event = envelope.event();
 
-      // using the cartId as the key and `DefaultPartitioner` will select partition based on the key
+      // using the the$domain$Id as the key and `DefaultPartitioner` will select partition based on the key
       // so that events for same cart always ends up in same partition
-      String key = event.cartId();
+      String key = event.the$domain$Id();
       ProducerRecord<String, byte[]> producerRecord = new ProducerRecord<>(topic, key, serialize(event));
       return sendProducer
           .send(producerRecord)

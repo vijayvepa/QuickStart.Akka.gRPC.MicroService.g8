@@ -65,8 +65,8 @@ public class $domain$ServiceImpl implements $domain$Service {
   @Override
   public CompletionStage<$domain$Response> addItem(AddItemRequest in) {
 
-    logger.info("addItem {} to cart {}", in.getItemId(), in.get$domain$Id());
-    final EntityRef<$domain$Command> entityRef = getEntityRef(in.get$domain$Id());
+    logger.info("addItem {} to cart {}", in.getItemId(), in.getThe$domain$Id());
+    final EntityRef<$domain$Command> entityRef = getEntityRef(in.getThe$domain$Id());
     final CompletionStage<Summary> reply = entityRef.askWithStatus(replyTo -> new AddItem(in.getItemId(), in.getQuantity(), replyTo), timeout);
 
     final CompletionStage<$domain$Response> cart = reply.thenApply(ProtoUtils::toProtoSummary);
@@ -76,8 +76,8 @@ public class $domain$ServiceImpl implements $domain$Service {
 
   @Override
   public CompletionStage<$domain$Response> removeItem(RemoveItemRequest in) {
-    logger.info("Performing RemoveItem  to cart {}", in.get$domain$Id());
-    final EntityRef<$domain$Command> entityRef = getEntityRef(in.get$domain$Id());
+    logger.info("Performing RemoveItem  to cart {}", in.getThe$domain$Id());
+    final EntityRef<$domain$Command> entityRef = getEntityRef(in.getThe$domain$Id());
 
     final CompletionStage<Summary> reply = entityRef.askWithStatus(replyTo -> new RemoveItem(in.getItemId(), replyTo), timeout);
 
@@ -92,9 +92,9 @@ public class $domain$ServiceImpl implements $domain$Service {
 
   @Override
   public CompletionStage<$domain$Response> checkout(CheckoutRequest in) {
-    logger.info("checkout {} ", in.get$domain$Id());
+    logger.info("checkout {} ", in.getThe$domain$Id());
 
-    final EntityRef<$domain$Command> entityRef = getEntityRef(in.get$domain$Id());
+    final EntityRef<$domain$Command> entityRef = getEntityRef(in.getThe$domain$Id());
     final CompletionStage<Summary> summary = entityRef.askWithStatus(Checkout::new, timeout);
     final CompletionStage<$domain$Response> cart = summary.thenApply(ProtoUtils::toProtoSummary);
     return convertError(cart);
@@ -103,15 +103,15 @@ public class $domain$ServiceImpl implements $domain$Service {
 
   @Override
   public CompletionStage<$domain$Response> get$domain$(Get$domain$Request in) {
-    logger.info("get$domain$ {}", in.get$domain$Id());
-    final EntityRef<$domain$Command> entityRef = getEntityRef(in.get$domain$Id());
+    logger.info("get$domain$ {}", in.getThe$domain$Id());
+    final EntityRef<$domain$Command> entityRef = getEntityRef(in.getThe$domain$Id());
     final CompletionStage<Summary> get = entityRef.ask(Get::new, timeout);
 
     final CompletionStage<$domain$Response> proto$domain$ = GrpcUtils.handleNotFound(
         get,
         summary -> summary.items().isEmpty(),
         ProtoUtils::toProtoSummary,
-        String.format("$domain$ %s is empty", in.get$domain$Id()));
+        String.format("$domain$ %s is empty", in.getThe$domain$Id()));
 
     return convertError(proto$domain$);
 
@@ -119,8 +119,8 @@ public class $domain$ServiceImpl implements $domain$Service {
 
   @Override
   public CompletionStage<$domain$Response> adjustItemQuantity(AdjustItemQuantityRequest in) {
-    logger.info("Performing AdjustItemQuantity  to entity {}", in.get$domain$Id());
-    final EntityRef<$domain$Command> entityRef = getEntityRef(in.get$domain$Id());
+    logger.info("Performing AdjustItemQuantity  to entity {}", in.getThe$domain$Id());
+    final EntityRef<$domain$Command> entityRef = getEntityRef(in.getThe$domain$Id());
 
     final CompletionStage<Summary> reply = entityRef.askWithStatus(replyTo -> new AdjustItemQuantity(in.getItemId(), in.getQuantity(), replyTo), timeout);
 

@@ -4,5 +4,5 @@ import $group$.$package$.$domain_package$.$domain$Event;
 
 import java.time.Instant;
 
-public record CheckedOut(String cartId, Instant eventTime) implements $domain$Event {
+public record CheckedOut(String the$domain$Id, Instant eventTime) implements $domain$Event {
 }

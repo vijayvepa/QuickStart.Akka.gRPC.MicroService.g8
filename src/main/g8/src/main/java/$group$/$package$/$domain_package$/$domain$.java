@@ -47,16 +47,16 @@ public class $domain$ extends EventSourcedBehaviorWithEnforcedReplies<$domain$Co
   public static final EntityTypeKey<$domain$Command> ENTITY_TYPE_KEY =
       EntityTypeKey.create($domain$Command.class, "$domain$");
 
-  private final String cartId;
+  private final String the$domain$Id;
   private final String projectionTag;
 
   private $domain$(
-      String cartId,
+      String the$domain$Id,
       String projectionTag) {
-    super(PersistenceId.of(ENTITY_TYPE_KEY.name(), cartId));
+    super(PersistenceId.of(ENTITY_TYPE_KEY.name(), the$domain$Id));
     this.projectionTag = projectionTag;
     SupervisorStrategy.restartWithBackoff(Duration.ofMillis(200), Duration.ofSeconds(5), 0.1);
-    this.cartId = cartId;
+    this.the$domain$Id = the$domain$Id;
   }
 
   public static void init(ActorSystem<?> system) {
@@ -70,9 +70,9 @@ public class $domain$ extends EventSourcedBehaviorWithEnforcedReplies<$domain$Co
   }
 
   public static Behavior<$domain$Command> create(
-      String cartId,
+      String the$domain$Id,
       String projectionTag) {
-    return Behaviors.setup(ctx -> EventSourcedBehavior.start(new $domain$(cartId, projectionTag), ctx));
+    return Behaviors.setup(ctx -> EventSourcedBehavior.start(new $domain$(the$domain$Id, projectionTag), ctx));
   }
 
   @Override
@@ -128,7 +128,7 @@ public class $domain$ extends EventSourcedBehaviorWithEnforcedReplies<$domain$Co
       return Effect().reply(command.replyTo(), error("Quantity must be > 0"));
     }
 
-    return Effect().persist(new ItemAdded(cartId, command.itemId(), command.quantity()))
+    return Effect().persist(new ItemAdded(the$domain$Id, command.itemId(), command.quantity()))
         .thenReply(command.replyTo(), updated$domain$ -> success(updated$domain$.toSummary()));
   }
 
@@ -141,7 +141,7 @@ public class $domain$ extends EventSourcedBehaviorWithEnforcedReplies<$domain$Co
       return Effect().reply(command.replyTo(), error("Cannot checkout an empty shopping cart."));
     }
 
-    return Effect().persist(new CheckedOut(cartId, Instant.now()))
+    return Effect().persist(new CheckedOut(the$domain$Id, Instant.now()))
         .thenReply(command.replyTo(), updated$domain$ -> success(updated$domain$.toSummary()));
   }
 
@@ -189,7 +189,7 @@ public class $domain$ extends EventSourcedBehaviorWithEnforcedReplies<$domain$Co
       return Effect().reply(command.replyTo(), error("Item not found: " + command.itemId()));
     }
 
-    return Effect().persist(new ItemRemoved(cartId, command.itemId()))
+    return Effect().persist(new ItemRemoved(the$domain$Id, command.itemId()))
         .thenReply(command.replyTo(), updatedItem -> success(state.toSummary()));
   }
 
@@ -213,7 +213,7 @@ public class $domain$ extends EventSourcedBehaviorWithEnforcedReplies<$domain$Co
       return Effect().reply(command.replyTo(), error("Quantity {} must be > 0" + command.updatedQuantity()));
     }
 
-    return Effect().persist(new ItemQuantityAdjusted(cartId, command.itemId(), command.updatedQuantity()))
+    return Effect().persist(new ItemQuantityAdjusted(the$domain$Id, command.itemId(), command.updatedQuantity()))
         .thenReply(command.replyTo(), updatedItem -> success(updatedItem.toSummary()));
   }
 
