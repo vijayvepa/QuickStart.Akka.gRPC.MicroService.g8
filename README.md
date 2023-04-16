@@ -55,7 +55,7 @@ or
 gradle run
 ```
 
-## Template license
+## Template License
 
 Based on templates and examples Written by Lightbend, Inc.
 
@@ -68,6 +68,10 @@ This template is distributed without any warranty. See <http://creativecommons.o
 [sbt_download]: http://www.scala-sbt.org/download.html
 
 
-## Disclaimer
+## Changes from the Tutorial
 
-The project organization and code style is different from the examples and not endorsed by Lightbend, Inc.
+- The project organization and code style is different from the examples and not endorsed by Lightbend, Inc.
+- Uses Java 17
+- Uses records
+- Uses outer classes (vs inner classes in the tutorial)
+- Uses newer version of Spring
