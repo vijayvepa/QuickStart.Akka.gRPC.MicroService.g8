@@ -2,7 +2,7 @@ package $group$.$package$;
 
 import $group$.$package$.$domain_package$.event.ItemAdded;
 import $group$.$package$.$domain_package$.model.Summary;
-import $group$.$package$.proto.$domain$;
+import $group$.$package$.proto.$domain$Response;
 import $group$.$package$.proto.Get$projection$Response;
 import $group$.$package$.proto.Item;
 import $group$.$package$.$projection_package$.model.$projection$;
@@ -13,14 +13,14 @@ import java.util.Optional;
 public class ProtoUtils {
   private ProtoUtils(){}
 
-  public static $domain$ toProtoSummary(Summary summary) {
+  public static $domain$Response toProtoSummary(Summary summary) {
     final List<Item> protoItems = summary.items().entrySet().stream()
         .map(entry -> Item.newBuilder()
             .setItemId(entry.getKey())
             .setQuantity(entry.getValue())
             .build()).toList();
 
-    return $domain$.newBuilder().addAllItems(protoItems).build();
+    return $domain$Response.newBuilder().addAllItems(protoItems).build();
   }
 
   public static Get$projection$Response toProto$projection$(Optional<$projection$> itemPopularity) {

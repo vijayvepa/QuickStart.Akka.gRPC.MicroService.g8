@@ -23,6 +23,23 @@ sbt new https://github.com/vijayvepa/QuickStart.Akka.gRPC.MicroService.g8
 
 This template will prompt for the name of the project. Press `Enter` if the default values suit you.
 
+This will ask for different variables and generate the project with those substituted. Below are some examples to try.
+
+```shell
+
+name [akka-grpc-service]: airline-reservation-service
+akka_version [2.8.0]: 
+sbt_version [1.8.2]: 
+group [com.example]: com.airways
+package [shopping]: airline.reservation
+domain_package [cart]: reservation
+projection_package [popularity]: analytics
+domain [ShoppingCart]: AirlineReservation
+projection [ItemPopularity]: AirlineStatistics
+database [shopping-cart]: airline-reservation
+
+```
+
 Once inside the project folder, run the application with:
 ```
 sbt run
@@ -49,3 +66,8 @@ This template is distributed without any warranty. See <http://creativecommons.o
 [g8]: http://www.foundweekends.org/giter8/
 [sbt]: http://www.scala-sbt.org/
 [sbt_download]: http://www.scala-sbt.org/download.html
+
+
+## Disclaimer
+
+The project organization and code style is different from the examples and not endorsed by Lightbend, Inc.
