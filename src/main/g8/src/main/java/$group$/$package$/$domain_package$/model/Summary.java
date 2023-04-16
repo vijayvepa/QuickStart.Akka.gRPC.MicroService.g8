@@ -1,4 +1,4 @@
-package $package$.cart.model;
+package $package$.$domain_package$.model;
 
 import common.CborSerializable;
 

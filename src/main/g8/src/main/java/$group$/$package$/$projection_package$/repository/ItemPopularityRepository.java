@@ -1,7 +1,7 @@
-package $package$.popularity.repository;
+package $package$.$projection_package$.repository;
 
 import org.springframework.data.repository.Repository;
-import shopping.popularity.model.$projection$;
+import $package$.$projection_package$.model.$projection$;
 
 import java.util.Optional;
 

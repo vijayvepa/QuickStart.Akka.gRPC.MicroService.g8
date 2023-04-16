@@ -5,7 +5,7 @@ import $package$.$domain_package$.model.Summary;
 import $package$.$domain_package$.proto.Cart;
 import $package$.$domain_package$.proto.Get$projection$Response;
 import $package$.$domain_package$.proto.Item;
-import shopping.popularity.model.$projection$;
+import $package$.$projection_package$.model.$projection$;
 
 import java.util.List;
 import java.util.Optional;

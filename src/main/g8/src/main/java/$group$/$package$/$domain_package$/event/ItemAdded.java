@@ -1,4 +1,4 @@
-package $package$.cart.event;
+package $package$.$domain_package$.event;
 
 import common.CborSerializable;
 import $package$.$domain_package$.$domain$Event;

@@ -1,4 +1,4 @@
-package $package$.popularity.model;
+package $package$.$projection_package$.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

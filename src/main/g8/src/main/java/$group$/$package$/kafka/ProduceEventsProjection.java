@@ -29,7 +29,7 @@ import org.springframework.orm.jpa.JpaTransactionManager;
 import $package$.$domain_package$.$domain$;
 import $package$.$domain_package$.event.ItemAdded;
 import $package$.$domain_package$.$domain$Event;
-import shopping.ProtoUtils;
+import $package$.ProtoUtils;
 
 import java.util.Optional;
 import java.util.concurrent.CompletionStage;

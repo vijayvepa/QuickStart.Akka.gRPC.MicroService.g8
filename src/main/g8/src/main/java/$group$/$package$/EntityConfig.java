@@ -10,8 +10,8 @@ import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import shopping.popularity.model.$projection$;
-import shopping.popularity.repository.$projection$Repository;
+import $package$.$projection_package$.model.$projection$;
+import $package$.$projection_package$.repository.$projection$Repository;
 
 import javax.sql.DataSource;
 import java.util.Objects;

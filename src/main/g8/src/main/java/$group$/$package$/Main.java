@@ -10,11 +10,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import $package$.$domain_package$.$domain$;
-import shopping.grpc.$domain$Server;
-import shopping.grpc.$domain$ServiceImpl;
-import shopping.kafka.ProduceEventsProjection;
-import shopping.popularity.$projection$Projection;
-import shopping.popularity.repository.$projection$Repository;
+import $package$.grpc.$domain$Server;
+import $package$.grpc.$domain$ServiceImpl;
+import $package$.kafka.ProduceEventsProjection;
+import $package$.$projection_package$.$projection$Projection;
+import $package$.$projection_package$.repository.$projection$Repository;
 
 public class Main {
 

@@ -1,4 +1,4 @@
-package $package$.cart.command;
+package $package$.$domain_package$.command;
 
 import akka.actor.typed.ActorRef;
 import $package$.$domain_package$.$domain$Command;
