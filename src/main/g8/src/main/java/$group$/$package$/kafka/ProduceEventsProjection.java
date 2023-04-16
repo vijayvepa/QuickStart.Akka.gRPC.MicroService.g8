@@ -111,7 +111,7 @@ public final class ProduceEventsProjection {
       final String fullName;
       if (event instanceof ItemAdded someItemAdded) {
         protoMessage = ProtoUtils.toProtoItemAdded(someItemAdded).toByteString();
-        fullName = shopping.cart.proto.ItemAdded.getDescriptor().getFullName();
+        fullName = $group$.$package$.proto.ItemAdded.getDescriptor().getFullName();
       } else {
         throw new IllegalArgumentException("Unknown event type: " + event.getClass());
       }

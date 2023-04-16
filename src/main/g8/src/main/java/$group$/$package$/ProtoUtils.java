@@ -2,9 +2,9 @@ package $group$.$package$;
 
 import $group$.$package$.$domain_package$.event.ItemAdded;
 import $group$.$package$.$domain_package$.model.Summary;
-import $group$.$package$.$domain_package$.proto.$domain$;
-import $group$.$package$.$domain_package$.proto.Get$projection$Response;
-import $group$.$package$.$domain_package$.proto.Item;
+import $group$.$package$.proto.$domain$;
+import $group$.$package$.proto.Get$projection$Response;
+import $group$.$package$.proto.Item;
 import $group$.$package$.$projection_package$.model.$projection$;
 
 import java.util.List;

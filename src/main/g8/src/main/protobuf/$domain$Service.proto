@@ -6,11 +6,11 @@ option  java_package = "$group$.$package$.proto";
 package $group$.$package$;
 
 service $domain$Service {
-  rpc AddItem(AddItemRequest) returns ($domain$) {}
-  rpc RemoveItem(RemoveItemRequest) returns ($domain$) {}
-  rpc Checkout (CheckoutRequest) returns ($domain$) {}
-  rpc Get$domain$(Get$domain$Request) returns ($domain$) {}
-  rpc AdjustItemQuantity(AdjustItemQuantityRequest) returns ($domain$) {}
+  rpc AddItem(AddItemRequest) returns ($domain$Response) {}
+  rpc RemoveItem(RemoveItemRequest) returns ($domain$Response) {}
+  rpc Checkout (CheckoutRequest) returns ($domain$Response) {}
+  rpc Get$domain$(Get$domain$Request) returns ($domain$Response) {}
+  rpc AdjustItemQuantity(AdjustItemQuantityRequest) returns ($domain$Response) {}
   rpc Get$projection$(Get$projection$Request) returns (Get$projection$Response) {}
 }
 
@@ -33,7 +33,7 @@ message RemoveItemRequest{
   string itemId = 2;
 }
 
-message $domain${
+message $domain$Response{
   repeated Item items = 1;
   bool checkedOut = 2;
 }
